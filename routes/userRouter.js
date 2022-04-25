@@ -36,6 +36,7 @@ userRouter
 .options(cors.corsWithOption, (req, res) => {res.sendStatus(200);})
 .post('/login', (req, res, next) => {
     if (!req.session.user) {
+        /*
         let authHeader = req.headers.authorization;
         if (!authHeader) {
           let err = new Error("You're not authenticated!");
@@ -46,6 +47,7 @@ userRouter
         }
       
         let auth = new Buffer.from(authHeader.split(' ')[1], 'base64').toString().split(':');
+        */
         let username = req.body.username;
         let password = req.body.password;
         let admin;
